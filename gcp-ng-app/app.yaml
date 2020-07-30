@@ -1,4 +1,5 @@
 runtime: python27
+service: gcp-ng-app
 api_version: 1
 threadsafe: true
 handlers:
