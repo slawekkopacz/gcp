@@ -1,0 +1,9 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /
+  static_files: gcp-ng-app/index.html
+  upload: gcp-ng-app/index.html
+- url: /
+  static_dir: gcp-ng-app
