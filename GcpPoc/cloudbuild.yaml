@@ -1,6 +1,7 @@
 steps:
 
-- name: 'gcr.io/cloud-builders/dotnet'
+- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+  entrypoint: 'dotnet'
   args: [ 'publish', '-c', 'Release' ]
   dir: 'GcpPoc/GcpWebApi'
 
