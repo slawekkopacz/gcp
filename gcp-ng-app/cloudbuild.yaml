@@ -15,4 +15,4 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--version=prod']
-    dir: 'gcp-ng-app'
+    dir: 'gcp-ng-app/dist'
