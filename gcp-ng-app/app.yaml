@@ -2,9 +2,20 @@ runtime: python27
 service: gcp-ng-app
 api_version: 1
 threadsafe: true
+
 handlers:
 - url: /
   static_files: gcp-ng-app/index.html
   upload: gcp-ng-app/index.html
 - url: /
   static_dir: gcp-ng-app
+
+skip_files:
+  - e2e/
+  - node_modules/
+  - src/
+  - ^(.*/)?\..*$
+  - ^(.*/)?.*\.json$
+  - ^(.*/)?.*\.md$
+  - ^(.*/)?.*\.yaml$
+  - ^LICENSE
