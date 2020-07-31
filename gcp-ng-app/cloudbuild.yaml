@@ -1,16 +1,18 @@
 steps:
 
-  # Install node packages
   - name: 'gcr.io/cloud-builders/npm:current'
     args: [ 'install' ]
     dir: 'gcp-ng-app'
 
-  # Build productive files
   - name: 'gcr.io/cloud-builders/npm:current'
     args: [ 'run', 'build', '--prod' ]
     dir: 'gcp-ng-app'
 
-  # Deploy to google cloud app egnine
+  # Build app.yaml to \dist folder
+  - name: 'gcr.io/cloud-builders/npm:current'
+    args: [ 'run', 'copy-yaml' ]
+    dir: 'gcp-ng-app'
+
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--version=prod']
     dir: 'gcp-ng-app'
